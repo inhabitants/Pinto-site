@@ -324,7 +324,7 @@ export default function Home() {
               fillWidth 
               gap="32" 
               horizontal="center" 
-              wrap="wrap"
+              wrap={true}
             >
               <Card
                 maxWidth="360px"
@@ -366,7 +366,7 @@ export default function Home() {
               fillWidth 
               gap="32" 
               horizontal="center" 
-              wrap="wrap"
+              wrap={true}
             >
               <Column maxWidth="280px" gap="16" horizontal="center">
                 <Icon name="shield" size="xl" />
@@ -455,7 +455,7 @@ export default function Home() {
             <Row 
               fillWidth 
               horizontal="space-between" 
-              wrap="wrap"
+              wrap={true}
               gap="32"
             >
               <Column maxWidth="320px" gap="16">
