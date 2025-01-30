@@ -121,21 +121,26 @@ export default function Home() {
           paddingLeft="32"
           paddingY="20"
         >
-          <Logo size="m" icon={false} href="https://once-ui.com" />
+          <Logo size="m" icon={false} href="/" />
           <Row gap="12" hide="s">
             <Button
-              href="https://discord.com/invite/5EyAQ4eNdS"
-              prefixIcon="discord"
+              href="/produtos"
               size="s"
-              label="Discord"
+              label="Produtos"
               weight="default"
               variant="tertiary"
             />
             <Button
-              href="https://github.com/once-ui-system/nextjs-starter"
-              prefixIcon="github"
+              href="/sobre"
               size="s"
-              label="GitHub"
+              label="Sobre Nós"
+              weight="default"
+              variant="tertiary"
+            />
+            <Button
+              href="/contato"
+              size="s"
+              label="Contato"
               weight="default"
               variant="tertiary"
             />
@@ -231,14 +236,25 @@ export default function Home() {
                 app/page.tsx
               </Text>
             </InlineCode>
-            <Heading wrap="balance" variant="display-default-l" align="center" marginBottom="16">
-              We let designers code and developers design
+            <Heading 
+              wrap="balance" 
+              variant="display-default-l" 
+              align="center" 
+              marginBottom="16"
+            >
+              Pinto Brasil: Excelência em Soluções Industriais
             </Heading>
+            <Text 
+              align="center" 
+              onBackground="neutral-medium" 
+              marginBottom="24"
+            >
+              Líder em equipamentos e soluções para indústria há mais de 30 anos
+            </Text>
             <Button
-              id="readDocs"
-              target="_blank"
-              label="Open docs"
-              href="https://once-ui.com/docs"
+              id="verProdutos"
+              label="Ver Produtos"
+              href="/produtos"
               variant="secondary"
               arrowIcon
             />
@@ -298,600 +314,72 @@ export default function Home() {
           </Column>
           <Column fillWidth paddingX="32" gap="12" horizontal="center" position="relative">
             <Heading as="h2" variant="display-default-m">
-              Showcase
+              Produtos em Destaque
             </Heading>
             <Text marginBottom="32" align="center" onBackground="neutral-weak">
-              Tiny snippets to inspire your next project
+              Conheça nossas principais soluções industriais
             </Text>
 
-            {/* LOGIN */}
-            <Row
-              marginY="32"
-              background="overlay"
-              fillWidth
-              radius="xl"
-              border="neutral-alpha-weak"
-              overflow="hidden"
+            <Row 
+              fillWidth 
+              gap="32" 
+              horizontal="center" 
+              wrap="wrap"
             >
-              <Row fill hide="m">
-                <SmartImage src="/images/login.png" alt="Preview image" sizes="560px" />
-              </Row>
-              <Column fillWidth horizontal="center" gap="20" padding="32" position="relative">
-                <Background
-                  mask={{
-                    x: 100,
-                    y: 0,
-                    radius: 75,
-                  }}
-                  position="absolute"
-                  grid={{
-                    display: true,
-                    opacity: 50,
-                    width: "0.5rem",
-                    color: "neutral-alpha-medium",
-                    height: "1rem",
-                  }}
+              <Card
+                maxWidth="360px"
+                padding="24"
+                gap="16"
+                direction="column"
+              >
+                <SmartImage 
+                  src="/images/produto1.jpg" 
+                  alt="Produto 1"
+                  aspectRatio="16/9"
+                  radius="m"
                 />
-                <Logo wordmark={false} size="l" />
-                <Heading as="h3" variant="display-default-s">
-                  Welcome to Once UI
+                <Heading as="h3" variant="heading-default-m">
+                  Equipamento Industrial
                 </Heading>
-                <Text onBackground="neutral-medium" marginBottom="24">
-                  Log in or
-                  <SmartLink href="/">sign up</SmartLink>
+                <Text onBackground="neutral-medium">
+                  Descrição do equipamento e suas principais características
                 </Text>
-                <Column fillWidth gap="8">
-                  <Button
-                    label="Continue with Google"
-                    fillWidth
-                    variant="secondary"
-                    weight="default"
-                    prefixIcon="google"
-                    size="l"
-                  />
-                  <Button
-                    label="Continue with GitHub"
-                    fillWidth
-                    variant="secondary"
-                    weight="default"
-                    prefixIcon="github"
-                    size="l"
-                  />
-                </Column>
-                <Row fillWidth paddingY="24">
-                  <Row onBackground="neutral-weak" fillWidth gap="24" vertical="center">
-                    <Line />/<Line />
-                  </Row>
-                </Row>
-                <Column gap="-1" fillWidth>
-                  <Input
-                    id="email"
-                    label="Email"
-                    labelAsPlaceholder
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                    validate={validateLogin}
-                    errorMessage={false}
-                    radius="top"
-                  />
-                  <PasswordInput
-                    autoComplete="new-password"
-                    id="password"
-                    label="Password"
-                    labelAsPlaceholder
-                    radius="bottom"
-                    onChange={(e) => setPassword(e.target.value)}
-                    value={password}
-                    validate={validateLogin}
-                  />
-                </Column>
                 <Button
-                  id="login"
-                  label="Log in"
+                  variant="secondary"
+                  label="Saiba mais"
                   arrowIcon
-                  fillWidth
-                  onClick={() => {
-                    addToast({
-                      variant: "success",
-                      message: "Wohoo! It's a toast!",
-                    });
-                  }}
                 />
+              </Card>
+            </Row>
+          </Column>
+          <Column
+            fillWidth
+            background="surface"
+            padding="64"
+            gap="32"
+            horizontal="center"
+          >
+            <Heading as="h2" variant="display-default-m">
+              Por que escolher a Pinto Brasil?
+            </Heading>
+            <Row 
+              fillWidth 
+              gap="32" 
+              horizontal="center" 
+              wrap="wrap"
+            >
+              <Column maxWidth="280px" gap="16" horizontal="center">
+                <Icon name="shield" size="xl" />
+                <Heading as="h3" variant="heading-default-s">
+                  Qualidade Garantida
+                </Heading>
+                <Text align="center" onBackground="neutral-medium">
+                  30 anos de experiência no mercado industrial
+                </Text>
               </Column>
             </Row>
           </Column>
         </Column>
-
-        {/* PAYMENT */}
-        <Row
-          paddingX="32"
-          fillWidth
-          paddingY="160"
-          gap="64"
-          position="relative"
-          mobileDirection="column"
-          vertical="center"
-        >
-          <Background
-            style={{ left: "-1px" }}
-            borderTop="neutral-alpha-medium"
-            mask={{
-              x: 0,
-              y: 50,
-              radius: 100,
-            }}
-            position="absolute"
-            grid={{
-              display: true,
-              opacity: 100,
-              width: "10%",
-              color: "neutral-alpha-medium",
-              height: "1.25%",
-            }}
-          />
-          <Row
-            position="relative"
-            shadow="xl"
-            fillWidth
-            border="neutral-alpha-medium"
-            borderStyle="dashed"
-            background="page"
-            radius="xl"
-          >
-            <TiltFx
-              aspectRatio="16 / 9"
-              fillWidth
-              radius="xl"
-              border="accent-alpha-weak"
-              overflow="hidden"
-            >
-              <HoloFx fill>
-                <Background
-                  fill
-                  position="absolute"
-                  gradient={{
-                    display: true,
-                    tilt: -45,
-                    height: 150,
-                    width: 100,
-                    x: 75,
-                    y: -50,
-                    colorStart: "brand-solid-strong",
-                    colorEnd: "accent-solid-weak",
-                  }}
-                >
-                  <Column
-                    fill
-                    position="absolute"
-                    padding="24"
-                    vertical="end"
-                    gap="12"
-                    onSolid="neutral-strong"
-                  >
-                    <Text variant="body-default-xl">Lorant One</Text>
-                    <Row
-                      fillWidth
-                      horizontal="space-between"
-                      vertical="end"
-                      paddingRight="16"
-                    >
-                      <Column gap="4">
-                        <Text variant="body-default-m">08 / 27</Text>
-                        <Text variant="body-default-m">1234 5678 1234 5678</Text>
-                      </Column>
-                      <Icon name="visa" size="xl" />
-                    </Row>
-                  </Column>
-                </Background>
-              </HoloFx>
-            </TiltFx>
-          </Row>
-          <Column position="relative" fillWidth gap="-1">
-            <Row fillWidth vertical="center" horizontal="space-between" marginBottom="32">
-              <Heading as="h3" variant="display-default-xs">
-                Fill in your card details
-              </Heading>
-              <IconButton
-                data-border="rounded"
-                variant="tertiary"
-                icon="chevronRight"
-                tooltip="Next"
-                tooltipPosition="left"
-              />
-            </Row>
-            <Input
-              id="cardnumber"
-              label="Card number"
-              labelAsPlaceholder
-              radius="top"
-              defaultValue="1234 5678 1234 5678"
-            />
-            <Row fillWidth gap="-1">
-              <Input
-                id="expiry"
-                label="Expiry date"
-                labelAsPlaceholder
-                radius="bottom-left"
-                defaultValue="08 / 27"
-              />
-              <Input
-                id="cvv"
-                label="CVV"
-                labelAsPlaceholder
-                radius="bottom-right"
-                defaultValue="123"
-              />
-            </Row>
-          </Column>
-        </Row>
-
-        {/* BOOKING */}
-        <Row
-          padding="32"
-          fillWidth
-          gap="64"
-          position="relative"
-          mobileDirection="column"
-          vertical="center"
-        >
-          <Background
-            fill
-            position="absolute"
-            gradient={{
-              display: true,
-              opacity: 60,
-              tilt: 0,
-              height: 100,
-              width: 100,
-              x: 50,
-              y: 0,
-              colorStart: "brand-solid-strong",
-              colorEnd: "static-transparent",
-            }}
-          />
-          <Column
-            fillWidth
-            background="surface"
-            radius="xl"
-            border="neutral-medium"
-            overflow="hidden"
-            padding="32"
-            gap="40"
-            position="relative"
-          >
-            <Row fillWidth horizontal="center" gap="-1">
-              <Column
-                maxWidth={12}
-                gap="4"
-                leftRadius="l"
-                paddingX="16"
-                paddingY="12"
-                background="surface"
-                border="neutral-medium"
-              >
-                <Text variant="label-default-s" onBackground="neutral-weak">
-                  Check in
-                </Text>
-                {selectedRange?.startDate ? (
-                  <>
-                    {selectedRange?.startDate.toLocaleDateString("default", {
-                      day: "numeric",
-                      month: "long",
-                    })}
-                  </>
-                ) : (
-                  "Add dates"
-                )}
-              </Column>
-              <Column
-                maxWidth={12}
-                gap="4"
-                rightRadius="l"
-                paddingX="16"
-                paddingY="12"
-                background="surface"
-                border="neutral-medium"
-              >
-                <Text variant="label-default-s" onBackground="neutral-weak">
-                  Check out
-                </Text>
-                {selectedRange?.endDate ? (
-                  <>
-                    {selectedRange?.endDate?.toLocaleDateString("default", {
-                      day: "numeric",
-                      month: "long",
-                    })}
-                  </>
-                ) : (
-                  "Add dates"
-                )}
-              </Column>
-            </Row>
-            <Row fillWidth horizontal="center">
-              <DateRangePicker
-                data-scaling="110"
-                size="l"
-                fitWidth
-                gap="40"
-                mobileDirection="column"
-                onChange={(range) => setSelectedRange(range)}
-                value={selectedRange}
-              />
-            </Row>
-          </Column>
-        </Row>
-
-        {/* PROFILE */}
-        <Row
-          horizontal="center"
-          paddingX="32"
-          paddingY="64"
-          fillWidth
-          gap="32"
-          position="relative"
-        >
-          <Background
-            mask={{
-              cursor: true,
-            }}
-            dots={{
-              display: true,
-              opacity: 50,
-              color: "neutral-solid-strong",
-              size: "48",
-            }}
-            fill
-            position="absolute"
-            gradient={{
-              display: true,
-              opacity: 100,
-              tilt: 0,
-              height: 100,
-              width: 200,
-              x: 50,
-              y: 0,
-              colorStart: "neutral-background-medium",
-              colorEnd: "static-transparent",
-            }}
-          />
-          <Column maxWidth={32} gap="-1">
-            <Feedback icon variant="success" radius={undefined} topRadius="l" zIndex={1}>
-              Your profile is public.
-            </Feedback>
-            <Column
-              background="page"
-              radius={undefined}
-              bottomRadius="l"
-              overflow="hidden"
-              position="relative"
-              fillWidth
-              horizontal="center"
-              border="neutral-medium"
-            >
-              <MediaUpload
-                border={undefined}
-                emptyState={<Row paddingBottom="80">Drag and drop or click to browse</Row>}
-                position="absolute"
-                aspectRatio="16 / 9"
-                sizes="560px"
-                radius={undefined}
-                initialPreviewImage="/images/profile.jpg"
-              />
-              <Column
-                paddingTop="160"
-                paddingX="32"
-                paddingBottom="32"
-                fillWidth
-                position="relative"
-                horizontal="center"
-                gap="8"
-              >
-                <Avatar
-                  zIndex={1}
-                  style={{
-                    border: "8px solid var(--page-background)",
-                  }}
-                  size="xl"
-                  src="/images/l.jpg"
-                />
-                <Heading marginTop="24" as="h3" variant="display-default-m">
-                  Lorant One
-                </Heading>
-                <Text align="center" onBackground="neutral-weak" marginBottom="24">
-                  165 connections
-                </Text>
-                <SegmentedControl
-                  onToggle={(value) => console.log("SegmentedControl changed", value)}
-                  buttons={[
-                    {
-                      size: "l",
-                      value: "profile",
-                      label: "Profile",
-                    },
-                    {
-                      size: "l",
-                      value: "settings",
-                      label: "Settings",
-                    },
-                    {
-                      size: "l",
-                      value: "notifications",
-                      label: (
-                        <Row gap="8">
-                          Notifications
-                          <StatusIndicator size="s" color="cyan" />
-                        </Row>
-                      ),
-                    },
-                    {
-                      size: "l",
-                      value: "integrations",
-                      label: "Integrations",
-                    },
-                    {
-                      size: "l",
-                      value: "inbox",
-                      label: "Inbox",
-                    },
-                    {
-                      size: "l",
-                      value: "requests",
-                      label: "Requests",
-                    },
-                  ]}
-                />
-                <Column paddingY="32" fillWidth gap="-1">
-                  <Input
-                    radius="top"
-                    label="Name"
-                    labelAsPlaceholder
-                    defaultValue="Lorant One"
-                    id="name"
-                  />
-                  <Input
-                    radius="bottom"
-                    label="Email"
-                    labelAsPlaceholder
-                    defaultValue="lorant@once-ui.com"
-                    id="profileEmail"
-                  />
-                </Column>
-                <Textarea
-                  id="intro"
-                  label="Intro"
-                  lines="auto"
-                  value={intro}
-                  onChange={(e) => setIntro(e.target.value)}
-                  validate={validateIntro}
-                />
-                <TagInput
-                  id="interests"
-                  value={tags}
-                  onChange={(newTags: string[]) => {
-                    setTags(newTags);
-                  }}
-                  label="Interests"
-                />
-                <Select
-                  searchable
-                  labelAsPlaceholder
-                  id="select"
-                  label="Country"
-                  value={selectedValue}
-                  options={[
-                    {
-                      value: "Austria",
-                      label: "Austria",
-                      onClick: (value) => console.log("Visiblity set: ", value),
-                    },
-                    {
-                      value: "Finland",
-                      label: "Finland",
-                      onClick: (value) => console.log("Visiblity set: ", value),
-                    },
-                    {
-                      value: "New Zeland",
-                      label: "New Zeland",
-                      onClick: (value) => console.log("Visiblity set: ", value),
-                    },
-                    {
-                      value: "Norway",
-                      label: "Norway",
-                      onClick: (value) => console.log("Visiblity set: ", value),
-                    },
-                    {
-                      value: "United Kingdom",
-                      label: "United Kingdom",
-                      onClick: (value) => console.log("Visiblity set: ", value),
-                    },
-                    {
-                      value: "United States",
-                      label: "United States",
-                      onClick: (value) => console.log("Visiblity set: ", value),
-                    },
-                  ]}
-                  onSelect={handleSelect}
-                />
-                <Button
-                  className="mt-32"
-                  prefixIcon="security"
-                  variant="secondary"
-                  onClick={() => setIsFirstDialogOpen(true)}
-                >
-                  Password and security
-                </Button>
-              </Column>
-            </Column>
-          </Column>
-        </Row>
-
-        {/* CODE PREVIEW */}
-        <TiltFx fillWidth paddingX="32" paddingTop="64">
-          <Column
-            border="neutral-alpha-weak"
-            paddingX="32"
-            radius="xl"
-            overflow="hidden"
-            paddingY="160"
-            fillWidth
-            position="relative"
-          >
-            <Background
-              mask={{
-                x: 100,
-                y: 0,
-              }}
-              position="absolute"
-              grid={{
-                display: true,
-                color: "neutral-alpha-medium",
-                width: "2rem",
-                height: "2rem",
-              }}
-            />
-            <Background
-              mask={{
-                x: 0,
-                y: 100,
-                radius: 100,
-              }}
-              position="absolute"
-              grid={{
-                display: true,
-                color: "brand-alpha-strong",
-                width: "12",
-                height: "12",
-              }}
-              gradient={{
-                display: true,
-                opacity: 100,
-                height: 100,
-                width: 100,
-                tilt: 0,
-                x: 0,
-                y: 100,
-                colorStart: "brand-solid-strong",
-                colorEnd: "brand-background-medium",
-              }}
-            />
-            <Column horizontal="center" gap="48" fillWidth position="relative">
-              <Heading align="center" as="h2" variant="display-default-l">
-                Quick start
-              </Heading>
-              <CodeBlock
-                compact
-                maxWidth={40}
-                codeInstances={[
-                  {
-                    code: `git clone https://github.com/once-ui-system/nextjs-starter.git`,
-                    language: "tsx",
-                    label: "tsx",
-                  },
-                ]}
-              />
-            </Column>
-          </Column>
-        </TiltFx>
 
         <Row
           position="relative"
@@ -955,39 +443,47 @@ export default function Home() {
           as="footer"
           fillWidth
           paddingX="l"
-          paddingTop="128"
-          paddingBottom="80"
+          paddingY="64"
+          background="surface"
+          horizontal="center"
         >
-          <Background
-            borderTop="brand-alpha-strong"
-            mask={{
-              x: 50,
-              y: 0,
-            }}
-            position="absolute"
-            grid={{
-              display: true,
-              width: "0.25rem",
-              color: "brand-alpha-strong",
-              height: "0.25rem",
-            }}
-          />
           <Column
-            position="relative"
-            textVariant="body-default-xs"
-            onBackground="neutral-medium"
-            horizontal="center"
-            align="center"
+            maxWidth="l"
             fillWidth
-            gap="16"
+            gap="32"
           >
-            <Logo wordmark={false} size="s" />
-            <Text size="m">
-              <Text onBackground="neutral-weak">2024 /</Text> Once UI
+            <Row 
+              fillWidth 
+              horizontal="space-between" 
+              wrap="wrap"
+              gap="32"
+            >
+              <Column maxWidth="320px" gap="16">
+                <Logo size="m" />
+                <Text onBackground="neutral-medium">
+                  Pinto Brasil - Soluções industriais de qualidade desde 1990
+                </Text>
+              </Column>
+              <Column gap="16">
+                <Heading as="h4" variant="heading-default-xs">
+                  Contato
+                </Heading>
+                <Text onBackground="neutral-medium">
+                  Email: info@pintobrasil.com
+                </Text>
+                <Text onBackground="neutral-medium">
+                  Tel: +351 123 456 789
+                </Text>
+              </Column>
+            </Row>
+            <Line background="neutral-alpha-medium" />
+            <Text 
+              size="s" 
+              align="center" 
+              onBackground="neutral-medium"
+            >
+              © 2024 Pinto Brasil. Todos os direitos reservados.
             </Text>
-            <SmartLink href="https://github.com/once-ui-system/nextjs-starter?tab=MIT-1-ov-file">
-              MIT License
-            </SmartLink>
           </Column>
         </Row>
       </Column>
